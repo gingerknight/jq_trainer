@@ -2,6 +2,7 @@
 
 # third-party imports
 import libtmux
+from libtmux.constants import PaneDirection
 
 
 # Tmux Session Creation Class
@@ -13,17 +14,27 @@ class TmuxSession:
         """
         self.session_name = session_name
         self.server = libtmux.Server()
-        self.session = self.get_or_create_session()
+        self.session = self.__get_or_create_session()
+        self.__window_panes()
 
-    def get_or_create_session(self):
+    def __get_or_create_session(self):
         """
         Create a new tmux session, kills any existing session with the same name.
         """
         return self.server.new_session(session_name=self.session_name, kill_session=True)
 
+    def __window_panes(self):
+        """
+        Split current window into three panes (upper left, upper right, lower).
+        """
+        window = self.session.active_window
+        # Split the window into three panes
+        window.split(direction=PaneDirection.Below)
+        # Further split the upper left pane into two panes
+        window.panes[0].split(direction=PaneDirection.Right)
 
-# This code creates a new tmux session named "jq_trainer", kills any existing session with that name,
-# and sends the command to echo "Hello, World!" in the first pane of the attached window.
-window = TmuxSession("jq_trainer").session.active_window
-pane1 = window.panes[0]
-pane1.send_keys("echo 'Hello, World!'")
+    def __repr__(self):
+        """
+        String representation of the TmuxSession instance.
+        """
+        return f"TmuxSession(session_name={self.session_name})"
