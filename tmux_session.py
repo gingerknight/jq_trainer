@@ -26,6 +26,7 @@ class TmuxSession:
         # └───────────────────────────────┘
 
     """
+
     def __init__(self, session_name: str = "jq_trainer", prompts: Optional[dict] = None):
         """
         Initialize a TmuxSession instance.

@@ -1,12 +1,12 @@
 # python imports
 import subprocess
-import time
 
 # application imports
 from tmux_session import TmuxSession
 from prompts.prompts import start_prompts
 from watcher import PaneWatcher
 from helpers import bash_log_file, validator
+
 
 def setup_tmux_session():
     """
@@ -30,12 +30,9 @@ def main():
     bash_log_file(window.session.active_window.panes[1])
     # Kick off the watcher thread to monitor user input
     watcher = PaneWatcher(
-        log_file='./input.log',
-        feedback_pane=window.session.active_window.panes[2],
-        validator=validator
+        log_file="./input.log", feedback_pane=window.session.active_window.panes[2], validator=validator
     )
     watcher.start()
-
 
     # Now attach to the session
     subprocess.run(["tmux", "attach-session", "-t", window.session_name])

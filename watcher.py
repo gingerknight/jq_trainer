@@ -1,18 +1,20 @@
 import threading
 import time
-from libtmux import Pane, Session, Window
+from libtmux import Pane
 
 
 # Pane Watcher Class
+
 
 class PaneWatcher(threading.Thread):
     """
     A class to monitor the tmux panes for changes and trigger actions based on those changes.
     """
+
     def __init__(self, log_file, feedback_pane, validator, interval=5.0):
         super().__init__(daemon=True)
         self.log_file = log_file
-        self.feedback_pane: Pane = feedback_pane # The pane where feedback is displayed
+        self.feedback_pane: Pane = feedback_pane  # The pane where feedback is displayed
         self.validator = validator
         self.interval: float = interval
         self.last_position: int = 0
