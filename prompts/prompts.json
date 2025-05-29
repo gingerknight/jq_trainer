@@ -1,0 +1,6 @@
+{
+  "question": "Extract the first athlete's name",
+  "expected_output": "\"John Doe\"",
+  "hint": "Use .athletes[0].name"
+}
+
