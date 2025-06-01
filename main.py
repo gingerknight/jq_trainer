@@ -14,7 +14,6 @@ def main():
         questions = json.load(f)
 
     gui = JQWindowManager("JQ Trainer", questions)
-    gui.load_question()
     gui.run()
 
 
