@@ -1,6 +1,14 @@
-{
-  "question": "Extract the first athlete's name",
-  "expected_output": "\"John Doe\"",
-  "hint": "Use .athletes[0].name"
-}
+[
+  {
+    "question": "Question 1:\nExtract the first athlete's name",
+    "expected_output": "\"Jean-François Blanchy\"",
+    "hint": "Use .[0].name"
+  },
+  {
+    "question": "Question 2:\nExtract the first athlete's name",
+    "expected_output": "\"Jean-François Blanchy\"",
+    "hint": "Use .[0].name"
+  }
+]
+
 
