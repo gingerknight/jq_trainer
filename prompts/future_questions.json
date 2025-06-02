@@ -1,0 +1,68 @@
+[
+    {
+      "question": "Question 8:\nList all unique medal types",
+      "expected_output": "[\"Bronze\", \"Gold\", \"Silver\", null]",
+      "hint": "Use map(.medal) | unique"
+    },
+    {
+      "question": "Question 9:\nCount how many medals were awarded",
+      "expected_output": "39754",
+      "hint": "Use select(.medal != null) | length"
+    },
+    {
+      "question": "Question 10:\nFind the first athlete who won a gold medal",
+      "expected_output": "\"Paavo Nurmi\"",
+      "hint": "Use select(.medal == \"Gold\") | .[0].name"
+    },
+    {
+      "question": "Question 11:\nGet a list of all teams",
+      "expected_output": "[\"France\", \"USA\", \"Japan\", ...]",
+      "hint": "Use map(.team) | unique"
+    },
+    {
+      "question": "Question 12:\nHow many athletes are from team Canada?",
+      "expected_output": "12100",
+      "hint": "Use select(.team == \"Canada\") | length"
+    },
+    {
+      "question": "Question 13:\nFind all events in 'Gymnastics'",
+      "expected_output": "[\"Gymnastics Men's Individual All-Around\", ...]",
+      "hint": "Use select(.sport == \"Gymnastics\") | map(.event) | unique"
+    },
+    {
+      "question": "Question 14:\nCount female athletes from 1984",
+      "expected_output": "1200",
+      "hint": "Use select(.year == 1984 and .sex == \"F\") | length"
+    },
+    {
+      "question": "Question 15:\nWhat team did the 300th athlete represent?",
+      "expected_output": "\"Brazil\"",
+      "hint": "Use .[299].team"
+    },
+    {
+      "question": "Question 16:\nFind the number of sports in the 2000 Olympics",
+      "expected_output": "28",
+      "hint": "Use select(.year == 2000) | map(.sport) | unique | length"
+    },
+    {
+      "question": "Question 17:\nHow many athletes named 'John'?",
+      "expected_output": "287",
+      "hint": "Use select(.name | contains(\"John\")) | length"
+    },
+    {
+      "question": "Question 18:\nList all years with female athletes",
+      "expected_output": "[\"1900\", \"1904\", ...]",
+      "hint": "Use select(.sex == \"F\") | map(.year) | unique"
+    },
+    {
+      "question": "Question 19:\nHow many unique events are there?",
+      "expected_output": "765",
+      "hint": "Use map(.event) | unique | length"
+    },
+    {
+      "question": "Question 20:\nHow many athletes have no medal?",
+      "expected_output": "231362",
+      "hint": "Use select(.medal == null) | length"
+    }
+  ]
+  

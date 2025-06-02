@@ -5,9 +5,34 @@
     "hint": "Use .[0].name"
   },
   {
-    "question": "Question 2:\nExtract the first athlete's name",
-    "expected_output": "\"Jean-François Blanchy\"",
-    "hint": "Use .[0].name"
+    "question": "Question 2:\nHow many athletes competed in total?",
+    "expected_output": "234522",
+    "hint": "Use length"
+  },
+  {
+    "question": "Question 3:\nHow many unique sports exist",
+    "expected_output": "91",
+    "hint": "Use map(.sport) | unique | length"
+  },
+  {
+    "question": "Question 4:\nExtract the sport of the 100th athlete",
+    "expected_output": "\"Tennis\"",
+    "hint": "Use .[99].sport"
+  },
+  {
+    "question": "Question 5:\nCount all female athletes (not unique)",
+    "expected_output": "68771",
+    "hint": "Use select(.sex == 'F') | length \n(remember to make it an array... jq '[.[] | select....]'"
+  },
+  {
+    "question": "Question 6:\nHow many athletes competed in 2012? (not unique, entries)",
+    "expected_output": "9584",
+    "hint": "Use select(.year == 2012) | length \n(remember to make it an array... jq '[.[] | select....]'"
+  },
+  {
+    "question": "Question 7:\nFind the most recent Olympic year",
+    "expected_output": "\"2020\"",
+    "hint": "Use map(.year) | max"
   }
 ]
 
