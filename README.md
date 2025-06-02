@@ -69,9 +69,14 @@ Update questions.json with this format:
 {
   "question": "Your question here?",
   "expected_output": "Expected string result",
-  "dataset": "olympics.json"
+  "hint": "what command to run or thinkg about"
 }
 ```
+
+## Future Work 💡
+- Question difficulty tiers
+- Add hint functionality
+- Multi-dataset support?
 
 ## License 📄
 
