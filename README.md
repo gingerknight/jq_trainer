@@ -12,7 +12,7 @@ A terminal-powered GUI app built with Python and `jq` to train your JSON query s
 
 ## Demo
 
-> Coming soon
+![JQ Trainer Demo](jq_demo.gif)
 
 ## Requirements 📦
 
